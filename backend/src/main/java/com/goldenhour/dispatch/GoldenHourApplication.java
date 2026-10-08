@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
  * GoldenHour: real-time ambulance dispatch for Mumbai.
- * See README.md for the architecture and INTERVIEW_GUIDE.md for the design walk-through.
+ * See README.md for the architecture and design.
  */
 @SpringBootApplication
 @EnableScheduling

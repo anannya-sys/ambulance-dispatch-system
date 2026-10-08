@@ -36,7 +36,7 @@ The fleet is simulated (50 ambulances on real Mumbai roads); everything else is 
 
 | Layer | Choice | Why |
 |---|---|---|
-| API | Java 17, Spring Boot 3.5, Spring Data JPA, Bean Validation, springdoc OpenAPI | Standard, interview-friendly |
+| API | Java 17, Spring Boot 3.5, Spring Data JPA, Bean Validation, springdoc OpenAPI | Standard, widely used |
 | Database | PostgreSQL 16 + PostGIS, Flyway | KNN nearest-ambulance (`<->`) on a GiST index |
 | Locks / live cache | Redis 7 | `SET NX PX` lock with token + Lua release, so one ambulance can't be booked twice even with many dispatcher instances |
 | Event streaming | Apache Kafka (KRaft, no ZooKeeper) | GPS telemetry is high-volume; Kafka decouples ingestion from tracking, analytics and pre-alerts |
@@ -52,7 +52,7 @@ The fleet is simulated (50 ambulances on real Mumbai roads); everything else is 
 ambulance-dispatch/
 ├── docker-compose.yml          one command: postgis, redis, kafka, app
 ├── Dockerfile                  builds frontend + backend into one image
-├── README.md  INTERVIEW_GUIDE.md
+├── README.md
 ├── docs/                       PLAN.md, simulation results, screenshots
 ├── backend/
 │   ├── pom.xml
@@ -84,4 +84,4 @@ ambulance-dispatch/
 5. Demand model + pre-positioning + offline simulation (headline numbers).
 6. Live simulator, Kafka telemetry, WebSockets.
 7. React dashboard.
-8. Load test, README, interview guide, zip.
+8. Load test and README.
