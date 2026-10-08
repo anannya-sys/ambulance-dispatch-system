@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+body { @apply text-slate-200 antialiased; font-feature-settings: "cv11", "ss01"; }
+
+
+.leaflet-container { background: #0a1120; font-family: inherit; }
+.leaflet-control-attribution { background: rgba(7, 11, 20, .75) !important; color: #64748b !important; font-size: 10px; }
+.leaflet-control-attribution a { color: #94a3b8 !important; }
+.leaflet-bar a { background: #131d33 !important; color: #cbd5e1 !important; border-color: #1c2944 !important; }
+.leaflet-tooltip.gh-tip { background: #0f1729; color: #e2e8f0; border: 1px solid #2a3a5c; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,.45); padding: 6px 9px; font-size: 12px; }
+.leaflet-tooltip.gh-tip:before { display: none; }
+
+.amb-icon { transition: transform .9s linear; }
+.pulse-ring { position: absolute; inset: 0; border-radius: 9999px; animation: ping2 1.6s cubic-bezier(0,0,0.2,1) infinite; }
+
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #2a3a5c; border-radius: 6px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
+
+.card { @apply rounded-xl border border-ink-700 bg-ink-900/80 backdrop-blur; }
+.chip { @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold transition disabled:opacity-50; }
+.btn-primary { @apply btn bg-red-500 text-white hover:bg-red-400 shadow-lg shadow-red-500/20; }
+.btn-ghost { @apply btn border border-ink-600 bg-ink-800 text-slate-200 hover:bg-ink-700; }
+.label { @apply text-[11px] font-semibold uppercase tracking-wider text-slate-500; }

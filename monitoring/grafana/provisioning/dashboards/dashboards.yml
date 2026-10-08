@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: goldenhour
+    folder: GoldenHour
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards

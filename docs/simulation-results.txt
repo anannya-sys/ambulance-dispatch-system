@@ -1,0 +1,37 @@
+=== Normal load ===
+GoldenHour evaluation: 5 seeds x 14 days, 500 calls/day, 50 ambulances
+Configuration                                               Resp CritResp  CritP90  Crit<15 CritTreat   Golden TurnAway    Util
+Baseline (nearest ambulance, FIFO, nearest capable hospital)    8.2m     8.2m    13.5m    92.8%     47.7m    75.6%      768   25.7%
++ Predictive pre-positioning only                           7.5m     7.4m    12.4m    95.0%     47.0m    76.7%      753   25.2%
++ Severity priority queue only                              8.2m     8.2m    13.5m    92.8%     47.7m    75.6%      768   25.7%
++ Time-to-treatment routing only                            8.2m     8.2m    13.5m    93.2%     39.3m    97.6%        0   26.0%
++ Green corridor only                                       8.0m     7.5m    12.4m    95.5%     46.0m    78.1%      774   25.4%
+GoldenHour (all features)                                   7.5m     7.0m    11.7m    96.0%     37.0m    98.6%        0   25.3%
+
+Per seed (baseline vs GoldenHour, critical response / golden hour):
+  seed 1: 8.2 -> 6.9 min | 77.2% -> 98.3%
+  seed 2: 8.1 -> 6.9 min | 74.2% -> 98.9%
+  seed 3: 8.3 -> 7.0 min | 74.1% -> 98.2%
+  seed 4: 8.2 -> 7.0 min | 75.3% -> 98.2%
+  seed 5: 8.2 -> 7.0 min | 77.3% -> 99.1%
+
+Headline: Critical response 8.2 -> 7.0 min (-15.0%); golden-hour treatment 75.6% -> 98.6% (+22.9 pts); hospital turn-aways/transfers -100%
+
+=== Surge week (+50% calls) ===
+GoldenHour evaluation: 5 seeds x 7 days, 750 calls/day, 50 ambulances
+Configuration                                               Resp CritResp  CritP90  Crit<15 CritTreat   Golden TurnAway    Util
+Baseline (nearest ambulance, FIFO, nearest capable hospital)   15.0m    14.7m    34.7m    73.3%     58.5m    59.5%      849   46.7%
++ Predictive pre-positioning only                          14.5m    14.3m    33.6m    74.2%     58.5m    59.5%      867   46.3%
++ Severity priority queue only                             14.8m    13.5m    28.9m    75.1%     57.6m    60.5%      864   46.6%
++ Time-to-treatment routing only                           13.1m    12.8m    25.9m    77.5%     45.4m    86.1%        0   44.5%
++ Green corridor only                                      13.8m    12.7m    28.1m    78.7%     55.3m    63.1%      832   45.3%
+GoldenHour (all features)                                  12.7m    11.3m    23.3m    80.6%     42.9m    89.2%        0   43.9%
+
+Per seed (baseline vs GoldenHour, critical response / golden hour):
+  seed 1: 15.9 -> 12.6 min | 59.4% -> 85.1%
+  seed 2: 15.3 -> 11.8 min | 58.0% -> 88.4%
+  seed 3: 15.1 -> 11.6 min | 58.7% -> 87.9%
+  seed 4: 16.2 -> 11.0 min | 56.2% -> 90.0%
+  seed 5: 11.3 -> 9.4 min | 65.0% -> 94.6%
+
+Headline: Critical response 14.7 -> 11.3 min (-23.5%); golden-hour treatment 59.5% -> 89.2% (+29.7 pts); hospital turn-aways/transfers -100%
